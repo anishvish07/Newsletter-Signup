@@ -1,11 +1,19 @@
-const express = require("express");
-const https = require("https");
+import express from "express";
+import https from "http";
+import bodyParser from "body-parser";
+import { fileURLToPath } from "url";
+import { dirname, join } from "path";
+import * as dotenv from "dotenv"
+dotenv.config()
+
 const app = express();
-const bodyParser = require("body-parser");
-const { response } = require("express");
+
+const __filename = fileURLToPath(
+    import.meta.url)
+const __dirname = dirname(__filename)
 
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static("public"));
+app.use("/", express.static(join(__dirname + "public")));
 app.get("/", function(req, res) {
     res.sendFile(__dirname + "/signup.html");
 });
@@ -30,7 +38,7 @@ app.post("/", function(req, res) {
     const url = 'https://us21.api.mailchimp.com/3.0/lists/18747ff83e';
     const options = {
         method: "POST",
-        auth: "Anish_vish:a7ece9044ad522afa1603678a0bb7084-us21"
+        auth: `Anish_vish:${process.env.API_KEY}`
 
     }
     const request = https.request(url, options, function(response) {
@@ -52,7 +60,7 @@ app.post("/", function(req, res) {
     });
 });
 
-app.listen(8001, function() {
+app.listen(process.env.PORT || 8001, function() {
     console.log("server is running..");
 });
 
