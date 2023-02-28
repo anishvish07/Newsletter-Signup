@@ -50,6 +50,10 @@
             box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
         }
         
+        body {
+            background-image: url("https://images.pexels.com/photos/518543/pexels-photo-518543.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+        }
+        
         .b-example-vr {
             flex-shrink: 0;
             width: 1.5rem;
@@ -87,20 +91,24 @@
 
 <body class="text-center">
 
-    <main class="form-signin w-100 m-auto">
+    <main class="form-signin w-500 m-auto">
         <form action="/" method="post">
-            <img class="mb-4" src="https://images.pexels.com/photos/518543/pexels-photo-518543.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" width="92" height="77" style="border-radius:50%;">
-            <h1 class="h3 mb-3 fw-normal">Sign-Up Newsletter</h1>
+            <img class="mb-1 border border-dark" src="https://images.pexels.com/photos/217250/pexels-photo-217250.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" width="150" height="110" style="border-radius:50%;">
+            <br>
+            <h1 class="h2 mb-2 fw-normal text-danger">Sign-Up Newsletter</h1>
+            <br>
+
 
             <input type="text" name="firstName" class="form-control" placeholder="First Name" autofocus>
             <input type="text" name="lastName" class="form-control" placeholder="Last Name">
-            <input type="email" name="email" class="form-control" placeholder="e-mail">
+            <input type="email" name="email" class="form-control" placeholder="@E-mail">
 
 
+            <br>
+            <br>
 
-
-            <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-            <p class="mt-5 mb-3 text-muted">&copy; The App Brewerey</p>
+            <button class="w-100 btn btn-lg btn-primary text-dark" type="submit">Sign in</button>
+            <p class="mt-5 mb-2 text-warning">&copy; $Anish Pvt Ltd</p>
         </form>
     </main>
 
